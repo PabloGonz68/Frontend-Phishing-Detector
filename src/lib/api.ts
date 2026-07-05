@@ -15,7 +15,7 @@ export interface ApiError {
 }
 
 // ===== API Configuration =====
-const API_BASE_URL = "http://localhost:8081/api/v1/phishing";
+const API_BASE_URL = import.meta.env.PUBLIC_API_URL || "http://localhost:8081";
 
 // ===== API Functions =====
 
@@ -28,7 +28,7 @@ export async function analyzeEmail(
   subject: string,
   body: string
 ): Promise<AnalyzeResponse> {
-  const response = await fetch(`${API_BASE_URL}/analyze`, {
+  const response = await fetch(`${API_BASE_URL}/api/v1/phishing/analyze`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
