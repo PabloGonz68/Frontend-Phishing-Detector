@@ -1,0 +1,14 @@
+# Dependencias
+node_modules/
+
+# Builds
+dist/
+.astro/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
